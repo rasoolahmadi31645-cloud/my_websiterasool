@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="صفحه پیشنهادی نظرسنجی عمومی دبیرستان پیشتازان">
+  <title>نظرسنجی عمومی | دبیرستان پیشتازان</title>
+  <style>
+    :root { --navy:#16324f; --blue:#2563eb; --mint:#dff7ef; --ink:#182230; --muted:#64748b; --paper:#f4f7fb; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:Tahoma, Arial, sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; }
+    header { background:linear-gradient(135deg,#16324f,#2563eb); color:white; padding:30px 18px 42px; text-align:center; }
+    .badge { display:inline-block; border:1px solid #ffffff70; border-radius:999px; padding:3px 13px; font-size:.85rem; }
+    h1 { margin:12px 0 4px; font-size:clamp(1.55rem,4vw,2.3rem); }
+    header p { margin:5px auto 0; max-width:650px; color:#e8efff; }
+    main { width:min(760px, calc(100% - 28px)); margin:-22px auto 40px; position:relative; }
+    .card { background:white; padding:22px; border-radius:18px; box-shadow:0 10px 28px #16324f12; margin-bottom:16px; }
+    h2 { font-size:1.15rem; margin:0 0 12px; color:var(--navy); }
+    .notice { background:var(--mint); border-right:4px solid #10b981; padding:12px 14px; border-radius:10px; font-size:.92rem; }
+    label, legend { font-weight:bold; }
+    .field { margin:15px 0; }
+    input[type="text"], select, textarea { display:block; width:100%; margin-top:6px; padding:12px; border:1px solid #cbd5e1; border-radius:10px; font:inherit; background:#fff; }
+    textarea { min-height:100px; resize:vertical; }
+    .choices { display:grid; gap:9px; margin-top:8px; }
+    .choice { display:flex; gap:9px; align-items:flex-start; background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:10px 12px; font-weight:normal; cursor:pointer; }
+    .choice input { margin-top:7px; accent-color:var(--blue); }
+    button { width:100%; border:0; border-radius:12px; padding:13px 18px; background:var(--blue); color:white; font: bold 1rem Tahoma,Arial,sans-serif; cursor:pointer; }
+    button:hover { filter:brightness(.94); }
+    .secondary { background:#e8eefc; color:#16324f; margin-top:10px; }
+    .small { font-size:.86rem; color:var(--muted); }
+    .result { display:none; background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px; margin-top:14px; }
+    footer { text-align:center; color:var(--muted); font-size:.85rem; padding:0 18px 28px; }
+    a { color:var(--blue); }
+    @media (max-width:480px) { .card { padding:17px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="badge">صدای شما مهم است</span>
+    <h1>نظرسنجی عمومی دبیرستان پیشتازان</h1>
+    <p>با پاسخ‌دادن به چند پرسش کوتاه، به بهترشدن فضای آموزشی و فرهنگی مدرسه کمک کنید.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="notice">
+        <strong>توجه:</strong> این یک نمونه‌ی آماده و نمایشی است. پاسخ‌ها فعلاً فقط در همین مرورگر پردازش می‌شوند و برای مدرسه ارسال یا به‌صورت آنلاین ذخیره نمی‌شوند.
+        برای نظرسنجی واقعی و جمع‌آوری پاسخ‌ها، باید فرم به سرویس یا سامانه‌ای متصل شود که مدرسه تأیید کرده است.
+      </div>
+    </section>
+
+    <form id="survey">
+      <section class="card">
+        <h2>۱. درباره شما (اختیاری)</h2>
+        <div class="field">
+          <label for="role">نقش شما در مدرسه</label>
+          <select id="role" name="role">
+            <option value="">انتخاب کنید</option>
+            <option>دانش‌آموز</option>
+            <option>والدین</option>
+            <option>دبیر یا کادر مدرسه</option>
+            <option>سایر</option>
+          </select>
+        </div>
+        <p class="small">برای حفظ حریم خصوصی، نام، شماره تماس یا اطلاعات شخصی حساس وارد نکنید.</p>
+      </section>
+
+      <section class="card">
+        <h2>۲. ارزیابی کلی مدرسه</h2>
+        <fieldset class="field" style="border:0;padding:0;margin:0">
+          <legend>در مجموع، از فضای مدرسه چقدر رضایت دارید؟</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="satisfaction" value="خیلی زیاد" required> خیلی زیاد</label>
+            <label class="choice"><input type="radio" name="satisfaction" value="زیاد"> زیاد</label>
+            <label class="choice"><input type="radio" name="satisfaction" value="متوسط"> متوسط</label>
+            <label class="choice"><input type="radio" name="satisfaction" value="کم"> کم</label>
+            <label class="choice"><input type="radio" name="satisfaction" value="خیلی کم"> خیلی کم</label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="card">
+        <h2>۳. امکانات و فعالیت‌ها</h2>
+        <fieldset class="field" style="border:0;padding:0;margin:0">
+          <legend>کدام بخش‌ها بیشتر نیاز به بهبود دارند؟ (چند گزینه قابل انتخاب است)</legend>
+          <div class="choices">
+            <label class="choice"><input type="checkbox" name="improve" value="روش‌های آموزشی"> روش‌های آموزشی</label>
+            <label class="choice"><input type="checkbox" name="improve" value="کتابخانه و منابع آموزشی"> کتابخانه و منابع آموزشی</label>
+            <label class="choice"><input type="checkbox" name="improve" value="امکانات ورزشی"> امکانات ورزشی</label>
+            <label class="choice"><input type="checkbox" name="improve" value="برنامه‌های فرهنگی و هنری"> برنامه‌های فرهنگی و هنری</label>
+            <label class="choice"><input type="checkbox" name="improve" value="بهداشت و نظافت"> بهداشت و نظافت</label>
+            <label class="choice"><input type="checkbox" name="improve" value="ارتباط مدرسه با خانواده‌ها"> ارتباط مدرسه با خانواده‌ها</label>
+            <label class="choice"><input type="checkbox" name="improve" value="سایر موارد"> سایر موارد</label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="card">
+        <h2>۴. پیشنهاد شما</h2>
+        <div class="field">
+          <label for="suggestion">چه پیشنهادی برای بهترشدن مدرسه دارید؟ (اختیاری)</label>
+          <textarea id="suggestion" name="suggestion" maxlength="1000" placeholder="پیشنهادتان را محترمانه و بدون ذکر نام افراد بنویسید..."></textarea>
+        </div>
+        <button type="submit">نمایش خلاصه پاسخ من</button>
+        <button type="reset" class="secondary">پاک‌کردن پاسخ‌ها</button>
+        <div class="result" id="result" role="status" aria-live="polite"></div>
+      </section>
+    </form>
+    <section class="card">
+      <h2>درباره این صفحه</h2>
+      <p>این صفحه یک الگوی اولیه برای نظرسنجی عمومی دبیرستان پیشتازان است. پیش از انتشار عمومی، محتوای پرسش‌ها و شیوه جمع‌آوری پاسخ‌ها را با مسئول مدرسه هماهنگ کنید.</p>
+    </section>
+  </main>
+  <footer>طراحی نمونه برای دبیرستان پیشتازان • نظرسنجی محترمانه و سازنده</footer>
+
+  <script>
+    const form = document.getElementById('survey');
+    const result = document.getElementById('result');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const data = new FormData(form);
+      const role = data.get('role') || 'مشخص نشده';
+      const satisfaction = data.get('satisfaction');
+      const improvements = data.getAll('improve');
+      const suggestion = (data.get('suggestion') || '').trim();
+      result.replaceChildren();
+      const title = document.createElement('strong');
+      title.textContent = 'پاسخ شما آماده است (فقط روی همین دستگاه):';
+      result.appendChild(title);
+      const lines = [
+        'نقش: ' + role,
+        'رضایت کلی: ' + satisfaction,
+        'موارد پیشنهادی برای بهبود: ' + (improvements.length ? improvements.join('، ') : 'انتخاب نشده'),
+        'پیشنهاد: ' + (suggestion || 'نوشته نشده')
+      ];
+      const ul = document.createElement('ul');
+      lines.forEach(line => { const li = document.createElement('li'); li.textContent = line; ul.appendChild(li); });
+      result.appendChild(ul);
+      const note = document.createElement('p');
+      note.className = 'small';
+      note.textContent = 'این پاسخ به جایی ارسال نشده است. برای دریافت واقعی پاسخ‌ها، فرم باید به یک سرویس جمع‌آوری پاسخ متصل شود.';
+      result.appendChild(note);
+      result.style.display = 'block';
+      result.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+    form.addEventListener('reset', () => { result.style.display = 'none'; result.replaceChildren(); });
+  </script>
+</body>
+</html>
